@@ -12,6 +12,8 @@ class Blog(models.Model):
     def __unicode__(self):
         return '%s' % self.title
 
+    def __unicode__(self):
+        return self.title 
     @permalink
     def get_absolute_url(self):
         return ('view_blog_post', None, { 'slug': self.slug })
@@ -22,6 +24,9 @@ class Category(models.Model):
 
     def __unicode__(self):
         return '%s' % self.title
+
+    def __str__(self):
+        return self.title
 
     @permalink
     def get_absolute_url(self):
