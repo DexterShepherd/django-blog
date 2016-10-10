@@ -2,8 +2,13 @@ appnope==0.1.0
 decorator==4.0.10
 Django==1.10.2
 django-appconf==1.0.2
+django-bootstrap-form==3.2.1
 django-bootstrap3==7.1.0
 django-compressor==2.1
+django-sass-processor==0.5.1
+ipython==5.1.0
+ipython-genutils==0.1.0
+libsass==0.11.1
 pexpect==4.2.1
 pickleshare==0.7.4
 prompt-toolkit==1.0.7
