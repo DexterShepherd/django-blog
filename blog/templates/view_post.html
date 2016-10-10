@@ -2,9 +2,14 @@
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
+  <div class="post">
     <h1 class='title'>{{ post.title }}</h1>
-    <h5 class='posted'>{{ post.posted }}</h5>
-    <div class="content">
-        {{ post.body }}
+    <div class="meta">
+      <h5 class='posted'>{{ post.posted }}</h5>
+      <h5>Category: <a href="{{ category.get_absolute_url }}">{{ category.title }}</a></h5>
     </div>
+    <div class="body">
+      {{ post.body | linebreaks }}
+    </div>
+  </div>
 {% endblock %}

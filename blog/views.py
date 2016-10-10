@@ -36,8 +36,10 @@ def edit_post(request, slug):
 
 
 def view_post(request, slug):
+    post = get_object_or_404(Blog, slug=slug)
     return render_to_response('view_post.html', {
-        'post': get_object_or_404(Blog, slug=slug)
+        'post': post,
+        'category': post.category
     })
 
 def destroy_post(request, slug):

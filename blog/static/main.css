@@ -36,8 +36,25 @@ nav a:hover {
 }
 
 .content {
-  padding-left: 50px;
+  padding: 50px;
   color: #14BECC;
+}
+
+.content a{
+  color: #14BECC;
+} 
+
+.content a:hover{
+  color: #14BECC;
+}
+
+.control{
+  display: inline-block;
+  padding-left: 50px;
+}
+
+.control a {
+  margin-left: 10px;
 }
 
 .form {
@@ -45,15 +62,15 @@ nav a:hover {
   max-width: 800px;
 }
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  background: #FF7985;
-  width: 100%;
-  position: absolute;
+.post{
+  max-width: 500px;
 }
 
-.footer h5{
-  color: #FFF; 
-  padding-left: 10px; 
+.post .meta{
+  padding-bottom: 50px;
+}
+
+.post .meta h5{
+  display: inline;
+  padding-right: 50px;
 }

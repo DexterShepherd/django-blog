@@ -2,38 +2,41 @@
 {% block title %}Welcome to bloggit{% endblock %}
 
 {% block content %}
-    <div class="posts">
-        <h2>Posts</h2>
-        {% if posts %}
-            <ul>
-            {% for post in posts %}
-                <li>
-                    <a href="{{ post.get_absolute_url }}"> {{ post.title }} </a>
-                    <a href="{% url 'edit_blog_post' slug=post.slug %}"> edit </a>
-                    <a href="{% url 'destroy_blog_post' slug=post.slug %}"> delete </a>
-                </li>
-            {% endfor %}
-            </ul>
-        {% else %}
-            <p>There are no posts :(</p>
-        {% endif %}
-    </div>
+  <div class="posts">
+    <h2>Posts</h2>
+    {% if posts %}
+      <ul>
+      {% for post in posts %}
+        <li>
+          <a href="{{ post.get_absolute_url }}"> {{ post.title }} </a>
+          <div class="control">
+            <a href="{% url 'edit_blog_post' slug=post.slug %}"> edit </a>
+            <a href="{% url 'destroy_blog_post' slug=post.slug %}"> delete </a>
+          </div>
+        </li>
+      {% endfor %}
+      </ul>
+    {% else %}
+      <p>There are no posts :(</p>
+    {% endif %}
+  </div>
 
-    <div class="cats">
-        <h2>Categories</h2>
-        {% if categories %}
-            <ul>
-            {% for category in categories %}
-                <li>
-                    <a href="{{ category.get_absolute_url }}"> {{ category.title }} </a>
-                    <a href="{% url 'edit_blog_category' slug=category.slug %}"> edit </a>
-                    <a href="{% url 'destroy_blog_category' slug=category.slug %}"> delete </a>
-                </li>
-            {% endfor %}
-            </ul>
-        {% else %}
-            <p>There are no categories :(</p>
-        {% endif %}
-    </div>
-
+  <div class="cats">
+    <h2>Categories</h2>
+    {% if categories %}
+      <ul>
+      {% for category in categories %}
+        <li>
+          <a href="{{ category.get_absolute_url }}"> {{ category.title }} </a>
+          <div class="control">
+            <a href="{% url 'edit_blog_category' slug=category.slug %}"> edit </a>
+            <a href="{% url 'destroy_blog_category' slug=category.slug %}"> delete </a>
+          </div>
+        </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+      <p>There are no categories :(</p>
+    {% endif %}
+  </div>
 {% endblock %}
