@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Welcome to bloggit{% endblock %}
+
+{% block content %}
+  <form method="POST" class="category-form form">{% csrf_token %}
+    {{ form.as_p }}
+
+    <button type='submit' class="save btn btn-default">Save</button>
+  </form>
+{% endblock %}

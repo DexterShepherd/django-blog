@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block head_title %} Welcome to bloggit {% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico" rel="stylesheet">
+    <link rel="stylesheet" href="/static/main.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <nav>
+     <a href="{% url 'blog_index' %}"><h1 class='logo'>Bloggit</h1></a>
+      <ul>
+        <li><a href="{% url 'new_blog_post' %}">Add a Post</a></li>
+        <li><a href="{% url 'new_blog_category' %}">Add a Category</a></li>
+      </ul>
+    </nav>
+    <div class="content">
+      {% block content %}
+
+      {% endblock %}
+    </div>
+    <div class="footer">
+      <h5>A simple blogging app written in Django by Dexter Shepherd </h5>
+    </div>
+  </body>
+</html>

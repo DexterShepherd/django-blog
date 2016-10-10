@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% block title %}Welcome to bloggit{% endblock %}
+
+{% block content %}
+  <form method="POST" class="form">{% csrf_token %}
+    {% bootstrap_form form show_label=False%}
+    {% buttons %}
+      <button type='submit' class="save btn btn-default">Save</button>
+    {% endbuttons %}
+  </form>
+{% endblock %}
